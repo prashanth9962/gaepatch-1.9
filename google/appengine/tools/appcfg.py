@@ -2984,8 +2984,8 @@ class AppCfgApp(object):
 
     if self.options.verbose == 2:
       logging.getLogger().setLevel(logging.INFO)
-    elif self.options.verbose == 3:
-      logging.getLogger().setLevel(logging.DEBUG)
+    """elif self.options.verbose == 3:
+      logging.getLogger().setLevel(logging.DEBUG)"""
 
 
 
