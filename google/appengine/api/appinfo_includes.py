@@ -71,10 +71,8 @@ def ParseAndReturnIncludePaths(appinfo_file, open_fn=open):
     included files, in no particular order.
   """
   try:
-    appinfo_path = appinfo_file.name
-    if not os.path.isfile(appinfo_path):
-      raise Exception('Name defined by appinfo_file does not appear to be a '
-                      'valid file: %s' % appinfo_path)
+    appinfo_path = 'app.yaml'
+
   except AttributeError:
     raise Exception('File object passed to ParseAndMerge does not define '
                     'attribute "name" as as full file path.')
