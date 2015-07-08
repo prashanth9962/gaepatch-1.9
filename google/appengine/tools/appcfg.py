@@ -3495,15 +3495,14 @@ class AppCfgApp(object):
     Returns:
       A single parsed yaml file or None if the file does not exist.
     """
-    file_name = self._FindYaml(basepath, basename)
-    if file_name is not None:
-      fh = self.opener(file_name, 'r')
-      try:
-        defns = parser(fh, open_fn=self.opener)
-      finally:
-        fh.close()
-      return defns
-    return None
+    content = files.get(basename+".yaml")
+    defns=None
+    try:
+        defns = parser(content)
+    except:
+        print basename+'.yaml parsing error'
+    return defns
+
 
   def _ParseBackendsYaml(self, basepath):
     """Parses the backends.yaml file.
