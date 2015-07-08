@@ -1914,15 +1914,15 @@ class AppVersionUpload(object):
       path: The path the file should be uploaded as.
       file_handle: A stream containing data to upload.
     """
-    assert not self.in_transaction, 'Already in a transaction.'
-    assert file_handle is not None
+    #assert not self.in_transaction, 'Already in a transaction.'
+    #assert file_handle is not None
 
-    reason = appinfo.ValidFilename(path)
-    if reason:
-      logging.error(reason)
-      return
+    #reason = appinfo.ValidFilename(path)
+    #if reason:
+    #  logging.error(reason)
+    #  return
 
-    content_hash = _HashFromFileHandle(file_handle)
+    content_hash = _HashFromFileHandle(content)
 
     self.files[path] = content_hash
     self.all_files.add(path)
