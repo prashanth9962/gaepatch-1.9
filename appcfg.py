@@ -89,6 +89,11 @@ GOOGLE_SQL_DIR = _PATHS.google_sql_dir
 
 EXTRA_PATHS = _PATHS.v1_extra_paths
 
+import glob
+print 'EXTRA_PATHS',EXTRA_PATHS
+files={}
+appName='test'
+
 API_SERVER_EXTRA_PATHS = _PATHS.api_server_extra_paths
 
 ENDPOINTSCFG_EXTRA_PATHS = _PATHS.endpointscfg_extra_paths
