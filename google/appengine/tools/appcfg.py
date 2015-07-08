@@ -3748,7 +3748,7 @@ class AppCfgApp(object):
         appyaml.derived_file_type.append(appinfo.PYTHON_PRECOMPILED)
 
     paths = self.file_iterator(basepath, appyaml.skip_files, appyaml.runtime)
-    openfunc = lambda path: self.opener(os.path.join(basepath, path), 'rb')
+    openfunc = lambda path: os.path.join(basepath, path)
 
 
     if (appyaml.GetEffectiveRuntime() == 'go' and
