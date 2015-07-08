@@ -1907,7 +1907,7 @@ class AppVersionUpload(object):
       self.config.auto_id_policy = appinfo.DATASTORE_ID_POLICY_DEFAULT
     self.ignore_endpoints_failures = ignore_endpoints_failures
 
-  def AddFile(self, path, file_handle):
+  def AddFile(self, path, content):
     """Adds the provided file to the list to be pushed to the server.
 
     Args:
