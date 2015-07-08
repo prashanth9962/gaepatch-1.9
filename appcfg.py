@@ -79,7 +79,9 @@ def get_dir_path(sibling):
 
 
 
-DIR_PATH = get_dir_path(os.path.join('lib', 'ipaddr'))
+#DIR_PATH = get_dir_path(os.path.join('lib', 'ipaddr'))
+import appconfig
+DIR_PATH = os.path.abspath(os.path.dirname(os.path.realpath(appconfig.__file__)))
 _PATHS = wrapper_util.Paths(DIR_PATH)
 
 SCRIPT_DIR = _PATHS.default_script_dir
