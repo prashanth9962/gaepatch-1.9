@@ -3023,6 +3023,19 @@ class AppCfgApp(object):
       self.action(self)
     except urllib2.HTTPError, e:
       body = e.read()
+      if body.find("rollback") > 0:
+        print >>sys.stderr, body
+        raise Rollbackerror("Rollback")
+      elif body.find("does not exist") > 0:
+        print >>sys.stderr, body
+        raise Googlesdkerror("The Application does not exist or you don't have permission to deploy on it.")
+      elif body.find("authenticate first") > 0:
+        print >>sys.stderr, body
+        raise Googlesdkerror("You have given wrong user name or password for deployment!!")
+      else:
+        print >>sys.stderr, body
+        raise Googlesdkerror("Unknowne Error in deployment")
+
       if self.wrap_server_error_message:
         error_format = ('Error %d: --- begin server output ---\n'
                         '%s\n--- end server output ---')
