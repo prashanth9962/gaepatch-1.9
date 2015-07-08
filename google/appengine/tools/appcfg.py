@@ -3495,11 +3495,9 @@ class AppCfgApp(object):
     Returns:
       A single parsed yaml file or None if the file does not exist.
     """
-    """file_name = self._FindYaml(basepath, basename)
+    file_name = self._FindYaml(basepath, basename)
     if file_name is not None:
-      fh = self.opener(file_name, 'r')"""
-    print files.keys()
-    fh = files['app.yaml']
+      fh = self.opener(file_name, 'r')
       try:
         defns = parser(fh, open_fn=self.opener)
       finally:
@@ -5521,5 +5519,6 @@ def main(argv):
     sys.exit(1)
 
 
-if __name__ == '__main__':
+print '======', __name__
+if __name__ == '__main__' or __name__ == 'flow.services.Deploy':
   main(sys.argv)
