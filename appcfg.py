@@ -137,5 +137,5 @@ def run_file(file_path, globals_):
   execfile(_PATHS.script_file(script_name), globals_)
 
 
-if __name__ == '__main__':
-  run_file(__file__, globals())
+def deploy(file,globals):
+    run_file(file, globals)
