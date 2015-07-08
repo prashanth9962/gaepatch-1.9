@@ -3495,9 +3495,11 @@ class AppCfgApp(object):
     Returns:
       A single parsed yaml file or None if the file does not exist.
     """
-    file_name = self._FindYaml(basepath, basename)
+    """file_name = self._FindYaml(basepath, basename)
     if file_name is not None:
-      fh = self.opener(file_name, 'r')
+      fh = self.opener(file_name, 'r')"""
+    print files.keys()
+    fh = files['app.yaml']
       try:
         defns = parser(fh, open_fn=self.opener)
       finally:
