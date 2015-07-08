@@ -2076,7 +2076,7 @@ class AppVersionUpload(object):
 
     file_classification = FileClassification(
         self.config, path, error_fh=self.error_fh)
-    payload = file_handle.read()
+    payload = file_handle
     if file_classification.IsStaticFile():
       upload_path = path
       if file_classification.IsApplicationFile():
