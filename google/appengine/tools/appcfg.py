@@ -1554,9 +1554,8 @@ def _HashFromFileHandle(file_handle):
 
 
 
-  pos = file_handle.tell()
-  content_hash = _Hash(file_handle.read())
-  file_handle.seek(pos, 0)
+
+  content_hash = _Hash(file_handle)
   return content_hash
 
 
