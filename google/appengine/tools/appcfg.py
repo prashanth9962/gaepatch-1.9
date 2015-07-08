@@ -5511,9 +5511,12 @@ def main(argv):
   logging.basicConfig(format=('%(asctime)s %(levelname)s %(filename)s:'
                               '%(lineno)s %(message)s '))
   try:
+    argv.extend(usrargs)
     result = AppCfgApp(argv).Run()
     if result:
       sys.exit(result)
+    if usrargs:
+      argv = argv[:len(usrargs)]
   except KeyboardInterrupt:
     StatusUpdate('Interrupted.')
     sys.exit(1)
