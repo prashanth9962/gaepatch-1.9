@@ -3396,9 +3396,6 @@ class AppCfgApp(object):
     Returns:
       Path to located yaml file if one exists, else None.
     """
-    if not os.path.isdir(basepath):
-      self.parser.error('Not a directory: %s' % basepath)
-
 
 
     alt_basepath = os.path.join(basepath, 'WEB-INF', 'appengine-generated')
