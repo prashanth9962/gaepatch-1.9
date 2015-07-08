@@ -2692,7 +2692,7 @@ def FileIterator(base, skip_files, runtime, separator=os.path.sep):
                           '<filename>.py and <filename>.pyc', name)
           continue
 
-      if os.path.isfile(fullname):
+
         if skip_files.match(name):
           logging.info('Ignoring file \'%s\': File matches ignore regex.', name)
         else:
