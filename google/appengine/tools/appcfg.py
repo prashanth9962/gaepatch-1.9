@@ -2718,12 +2718,15 @@ def GetFileLength(fh):
   Returns:
     The length of the stream.
   """
-  pos = fh.tell()
+
+  """pos = fh.tell()
 
   fh.seek(0, 2)
   length = fh.tell()
   fh.seek(pos, 0)
-  return length
+  return length"""
+  return sys.getsizeof(fh)
+
 
 
 def GetUserAgent(get_version=sdk_update_checker.GetVersionObject,
