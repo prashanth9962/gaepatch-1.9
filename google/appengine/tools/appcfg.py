@@ -2531,14 +2531,14 @@ class AppVersionUpload(object):
     """
     StatusUpdate('Scanning files on local disk.', self.error_fh)
     num_files = 0
-    for path in paths:
-      file_handle = openfunc(path)
+    for file in files:
+      #file_handle = openfunc(path)
       try:
-        file_length = GetFileLength(file_handle)
+        file_length = GetFileLength(files[file])
 
 
         file_classification = FileClassification(
-            self.config, path, self.error_fh)
+            self.config, file, self.error_fh)
         if file_classification.IsApplicationFile():
           max_size = self.resource_limits['max_file_size']
         else:
