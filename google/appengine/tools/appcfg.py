@@ -2581,11 +2581,13 @@ class AppVersionUpload(object):
                  self.error_fh)
     num_files = 0
     for missing_file in missing_files:
-      file_handle = openfunc(missing_file)
+      print missing_file
+      #file_handle = openfunc(missing_file)
       try:
-        self.UploadFile(missing_file, file_handle)
+        self.UploadFile(missing_file, files[missing_file])
       finally:
-        file_handle.close()
+        #file_handle.close()
+        pass
 
 
       num_files += 1
