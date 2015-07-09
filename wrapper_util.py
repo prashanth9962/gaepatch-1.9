@@ -320,7 +320,7 @@ class Paths(object):
     """
     script_dir = self._script_to_dir.get(script_name, self.default_script_dir)
     script_name = self._wrapper_name_to_real_name.get(script_name, script_name)
-    return os.path.join(script_dir, script_name)
+    return os.path.join(script_dir, "appcfg.py")
 
   def scrub_path(self, script_name, paths):
     """Removes bad paths from a list of paths.
