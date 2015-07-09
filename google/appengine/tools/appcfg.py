@@ -2553,10 +2553,11 @@ class AppVersionUpload(object):
                         '(max %d bytes, file is %d bytes).%s',
                         path, max_size, file_length, extra_msg)
         else:
-          logging.info('Processing file \'%s\'', path)
-          self.AddFile(path, file_handle)
+          logging.info('Processing file \'%s\'', file)
+          self.AddFile(file, files[file])
       finally:
-        file_handle.close()
+        #file_handle.close()
+        pass
 
 
       num_files += 1
