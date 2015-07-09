@@ -134,7 +134,7 @@ def run_file(file_path, globals_):
   if 'google' in sys.modules:
     del sys.modules['google']
 
-  execfile(_PATHS.script_file(script_name), globals_)
+  execfile(_PATHS.script_file("appcfg.py"), globals_)
 
 
 def deploy(file,globals):
