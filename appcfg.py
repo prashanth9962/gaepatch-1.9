@@ -80,7 +80,7 @@ def get_dir_path(sibling):
 
 
 #DIR_PATH = get_dir_path(os.path.join('lib', 'ipaddr'))
-import appconfig
+#import appconfig
 DIR_PATH = os.path.abspath(os.path.dirname(os.path.realpath(appconfig.__file__)))
 _PATHS = wrapper_util.Paths(DIR_PATH)
 
