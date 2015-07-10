@@ -81,7 +81,8 @@ def get_dir_path(sibling):
 
 #DIR_PATH = get_dir_path(os.path.join('lib', 'ipaddr'))
 #import appconfig
-DIR_PATH = os.path.abspath(os.path.dirname(os.path.realpath(appconfig.__file__)))
+#DIR_PATH = os.path.abspath(os.path.dirname(os.path.realpath(appconfig.__file__)))
+DIR_PATH = "/home/prashanth/AppEngines/gae-sdk1.9"
 _PATHS = wrapper_util.Paths(DIR_PATH)
 
 SCRIPT_DIR = _PATHS.default_script_dir
@@ -122,8 +123,8 @@ def run_file(file_path, globals_):
   """
   script_name = os.path.basename(file_path)
 
-  sys.path = (_PATHS.script_paths(script_name) +
-              _PATHS.scrub_path(script_name, sys.path))
+  sys.path = (_PATHS.script_paths("appcfg.py") +
+              _PATHS.scrub_path("appcfg.py", sys.path))
 
 
 

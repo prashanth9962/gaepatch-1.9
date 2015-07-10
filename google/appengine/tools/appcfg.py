@@ -71,8 +71,8 @@ from google.appengine.api import yaml_object
 from google.appengine.datastore import datastore_index
 from google.appengine.tools import appengine_rpc
 #orangescape flow error class importing
-from flow.exception.error import Rollbackerror , Googlesdkerror
-import appconfig
+#from flow.exception.error import Rollbackerror , Googlesdkerror
+#import appconfig
 try:
 
 
@@ -2905,7 +2905,9 @@ class AppCfgApp(object):
 
 
     self.options, self.args = self.parser.parse_args(argv[1:])
-
+    print "------------self.args--------------"
+    print self.args
+    print "-----------------------------------"
     if len(self.args) < 1:
       self._PrintHelpAndExit()
 
@@ -2924,10 +2926,14 @@ class AppCfgApp(object):
           '\nNote: the --oauth2 flag is now the default and can be omitted.\n')
 
     action = self.args.pop(0)
+    print "------------------------action--------------"
+    print action
+    print self.args
+    print "----------------------------------------------"
 
     def RaiseParseError(actionname, action):
 
-
+      print "-------------------Raise Parse Error-----------------"
       self.parser, self.options = self._MakeSpecificParser(action)
       error_desc = action.error_desc
       if not error_desc:
@@ -3015,6 +3021,7 @@ class AppCfgApp(object):
     self.file_iterator = file_iterator
 
   def Run(self):
+    print "--------------Run function called-------------"
     """Executes the requested action.
 
     Catches any HTTPErrors raised by the action and prints them to stderr.
@@ -3093,7 +3100,7 @@ class AppCfgApp(object):
 
       Adds an 'update' action for storing key-value pairs as a dict.
       """
-
+      print "---------------appcfg option-------------"
       _ACTION = 'update'
       ACTIONS = optparse.Option.ACTIONS + (_ACTION,)
       STORE_ACTIONS = optparse.Option.STORE_ACTIONS + (_ACTION,)
@@ -3498,6 +3505,12 @@ class AppCfgApp(object):
     Returns:
       A single parsed yaml file or None if the file does not exist.
     """
+    print "-------------parse yaml file-------------"
+    print basename
+    print "---------------------------------------------"
+    print "----------------------files list--------------"
+    print files
+    print "----------------------------------------"
     content = files.get(basename+".yaml")
     defns=None
     try:
@@ -5512,9 +5525,13 @@ The 'prepare_vm_runtime' prepares an application for the VM runtime."""),
 def main(argv):
   logging.basicConfig(format=('%(asctime)s %(levelname)s %(filename)s:'
                               '%(lineno)s %(message)s '))
+
   try:
     argv.extend(usrargs)
     result = AppCfgApp(argv).Run()
+    print "------------result---------"
+    print result
+    print "----------------------"
     if result:
       sys.exit(result)
     if usrargs:
