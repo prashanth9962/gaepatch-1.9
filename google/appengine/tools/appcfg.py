@@ -5514,7 +5514,7 @@ def main(argv):
                               '%(lineno)s %(message)s '))
   try:
     argv.extend(usrargs)
-    result = AppCfgApp(argv).Run()
+    result = AppCfgApp(usrargs).Run()
     if result:
       sys.exit(result)
     if usrargs:
