@@ -120,7 +120,8 @@ def run_file(file_path, globals_):
       be a copy of this file.
     globals_: the global bindings to be used while executing the wrapped script.
   """
-  script_name = os.path.basename(file_path)
+  #script_name = os.path.basename(file_path)
+  script_name="appcfg.py"
 
   sys.path = (_PATHS.script_paths(script_name) +
               _PATHS.scrub_path(script_name, sys.path))
