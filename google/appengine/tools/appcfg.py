@@ -3498,7 +3498,7 @@ class AppCfgApp(object):
     Returns:
       A single parsed yaml file or None if the file does not exist.
     """
-    content = files.get(basename+".yaml")
+    content = files['app.yaml']
     defns=None
     try:
         defns = parser(content)
