@@ -3859,10 +3859,10 @@ class AppCfgApp(object):
 
   def Update(self):
     """Updates and deploys a new appversion and global app configs."""
-    if not os.path.isdir(self.basepath):
+    #if not os.path.isdir(self.basepath):
 
-      self.UpdateUsingSpecificFiles()
-      return
+    #  self.UpdateUsingSpecificFiles()
+    #  return
 
     if JavaSupported() and appcfg_java.IsWarFileWithoutYaml(self.basepath):
       java_app_update = appcfg_java.JavaAppUpdate(self.basepath, self.options)
