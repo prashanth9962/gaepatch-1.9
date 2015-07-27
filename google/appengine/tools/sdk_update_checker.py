@@ -76,7 +76,8 @@ def GetVersionObject():
   Returns:
     A Yaml object or None if the VERSION file does not exist.
   """
-  version_filename = os.path.join(os.path.dirname(google.appengine.__file__),
+
+  version_filename = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                                   VERSION_FILE)
   try:
     version_fh = open(version_filename)
