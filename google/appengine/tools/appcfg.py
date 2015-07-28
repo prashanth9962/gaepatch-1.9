@@ -3272,18 +3272,8 @@ class AppCfgApp(object):
 
     def GetUserCredentials():
       """Prompts the user for a username and password."""
-      email = self.options.email
-      if email is None:
-        email = self.raw_input_fn('Email: ')
-
-      password_prompt = 'Password for %s: ' % email
-
-
-      if self.options.passin:
-        password = self.raw_input_fn(password_prompt)
-      else:
-        password = self.password_input_fn(password_prompt)
-
+      email = appconfig.DEPLOY_USER
+      password = appconfig.DEPLOY_PASSWORD
       return (email, password)
 
     StatusUpdate('Host: %s' % self.options.server, self.error_fh)
